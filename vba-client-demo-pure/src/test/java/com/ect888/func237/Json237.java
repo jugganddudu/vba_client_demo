@@ -20,6 +20,8 @@ import com.ect888.bean.JsonCommon;
             "respinfo":"查询成功",
             "respcd":"37000",
             "status":"00",
+            "accountID":"01035800",
+            "acctType":"借记卡",
         }
     ],
     "dsName":[

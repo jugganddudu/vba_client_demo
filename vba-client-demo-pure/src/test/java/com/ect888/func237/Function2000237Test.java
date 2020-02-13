@@ -1,5 +1,7 @@
 package com.ect888.func237;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,13 +43,6 @@ public class Function2000237Test {
 	String acctno="5187107521275211";
 	
 	/**
-	 * 业务流水号，暂不使用，填空字符串""
-	 * 
-	 * 参与签名
-	 */
-	String sysseqnb="";
-	
-	/**
 	 * 来源渠道，填固定值“0”
 	 * 
 	 * 参与签名
@@ -76,6 +71,14 @@ public class Function2000237Test {
 	 */
 	String biztypdesc="银行卡卡信息认证";
 	
+	/**
+	 * 时间戳
+	 * 
+	 * 参与签名
+	 */
+	String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+	
+	
 	private Config config=Config.getInstance();
 	
 	private PoolClient client=PoolClient.getInstance();
@@ -96,11 +99,11 @@ public class Function2000237Test {
 		
 		params.put(FunctionCommon.TO_AES_TO_URL_TO_BASE64_HEAD+"acctno", acctno);
 		
-		params.put(FunctionCommon.TO_SIGN_HEAD+"sysseqnb", sysseqnb);
 		params.put(FunctionCommon.TO_SIGN_HEAD+"biztypdesc", biztypdesc);
 		params.put(FunctionCommon.TO_SIGN_HEAD+"biztyp", biztyp);
 		params.put(FunctionCommon.TO_SIGN_HEAD+"placeid", placeid);
 		params.put(FunctionCommon.TO_SIGN_HEAD+"sourcechnl", sourcechnl);
+		params.put(FunctionCommon.TO_SIGN_HEAD+"timestamp", timestamp);
 		
 		params.put(FunctionCommon.TO_SIGN_HEAD+"ptyacct",config.getPtyacct());
 		params.put(FunctionCommon.TO_SIGN_HEAD+"ptycd",config.getPtycd());

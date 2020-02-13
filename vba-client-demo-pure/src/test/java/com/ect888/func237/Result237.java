@@ -52,6 +52,28 @@ public class Result237 {
 	 */
 	private String accountName;
 	
+	/**
+	 * 发卡行代码
+	 */
+	private String accountID;
+	
+	public String getAccountID() {
+		return accountID;
+	}
+	public void setAccountID(String accountID) {
+		this.accountID = accountID;
+	}
+	public String getAcctType() {
+		return acctType;
+	}
+	public void setAcctType(String acctType) {
+		this.acctType = acctType;
+	}
+	/**
+	 * 卡名称
+	 */
+	private String acctType;
+	
 	public String getSysSeqNb() {
 		return sysSeqNb;
 	}
